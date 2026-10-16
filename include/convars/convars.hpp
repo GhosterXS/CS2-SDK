@@ -151,8 +151,8 @@
 // bot_debug                                                 int32    0                     FCVAR_GAMEDLL|FCVAR_CHEAT  // For internal testing purposes.
 // bot_debug_target                                          int32    0                     FCVAR_GAMEDLL|FCVAR_CHEAT  // For internal testing purposes.
 // bot_defense_rush_chance                                   float32  33                    FCVAR_GAMEDLL|FCVAR_CHEAT  // Are the defense bots going to rush.
-// bot_defer_to_human_goals                                  bool     true                  FCVAR_GAMEDLL|FCVAR_RELEASE  // If nonzero and there is a human on the team, the bots will not do the scenario tasks.
-// bot_defer_to_human_items                                  bool     true                  FCVAR_GAMEDLL|FCVAR_RELEASE  // If nonzero and there is a human on the team, the bots will not get scenario items.
+// bot_defer_to_human_goals                                  bool     false                 FCVAR_GAMEDLL|FCVAR_RELEASE  // If nonzero and there is a human on the team, the bots will not do the scenario tasks.
+// bot_defer_to_human_items                                  bool     false                 FCVAR_GAMEDLL|FCVAR_RELEASE  // If nonzero and there is a human on the team, the bots will not get scenario items.
 // bot_difficulty                                            int32    2                     FCVAR_GAMEDLL|FCVAR_RELEASE  // Defines the skill of bots joining the game.  Values are: 0=easy, 1=normal, 2=hard, 3=expert.
 // bot_dont_shoot                                            bool     false                 FCVAR_GAMEDLL|FCVAR_CHEAT|FCVAR_RELEASE  // If nonzero, bots will not fire weapons (for debugging).
 // bot_eco_limit                                             float32  2000                  FCVAR_GAMEDLL|FCVAR_RELEASE  // If nonzero, bots will not buy if their money falls below this amount.
@@ -687,7 +687,7 @@ If 'match', the server will maintain a 1:N ratio of humans to bots, where N is b
 // cl_sequence_model_substring                               string                         FCVAR_DEVELOPMENTONLY|FCVAR_CLIENTDLL
 // cl_server_graphic1_enable                                 bool     true                  FCVAR_CLIENTDLL|FCVAR_RELEASE  // When enabled, 360x60 (<16kb) image file will be displayed to on-server spectators.
 // cl_server_graphic2_enable                                 bool     true                  FCVAR_CLIENTDLL|FCVAR_RELEASE  // When enabled, 220x45 (<16kb) image file will be displayed to on-server spectators.
-// cl_session                                                string                         FCVAR_DEVELOPMENTONLY|FCVAR_SERVER_CAN_EXECUTE
+// cl_session                                                string   $0                    FCVAR_DEVELOPMENTONLY|FCVAR_SERVER_CAN_EXECUTE
 // cl_show_bombs                                             bool     false                 FCVAR_DEVELOPMENTONLY|FCVAR_CLIENTDLL
 // cl_show_camera_position                                   bool     false                 FCVAR_DEVELOPMENTONLY|FCVAR_CLIENTDLL
 // cl_show_clan_in_death_notice                              bool     true                  FCVAR_CLIENTDLL|FCVAR_ARCHIVE|FCVAR_RELEASE  // Is set, the clan name will show next to player names in the death notices.
@@ -855,7 +855,7 @@ If 'match', the server will maintain a 1:N ratio of humans to bots, where N is b
 // contributionscore_kill_factor                             float32  0                     FCVAR_GAMEDLL|FCVAR_RELEASE  // percentage of victim's contribution score to award to their killer as a bonus
 // contributionscore_kill_reqs                               int32    1                     FCVAR_GAMEDLL|FCVAR_RELEASE  // extra requirements to earn contribution score for a kill
 // contributionscore_objective_kill                          int32    3                     FCVAR_GAMEDLL|FCVAR_RELEASE  // amount of contribution score added for an objective related kill
-// contributionscore_participation                           int32    0                     FCVAR_GAMEDLL|FCVAR_RELEASE  // amount of contribution score awarded to players for active participation in the round
+// contributionscore_participation                           int32    1                     FCVAR_GAMEDLL|FCVAR_RELEASE  // amount of contribution score awarded to players for active participation in the round
 // contributionscore_suicide                                 int32    -2                    FCVAR_GAMEDLL|FCVAR_RELEASE  // amount of contribution score for a suicide, normally negative
 // contributionscore_team_kill                               int32    -2                    FCVAR_GAMEDLL|FCVAR_RELEASE  // amount of contribution score for a team kill, normally negative
 // convars_echo_toggle_changes                               bool     true                  FCVAR_DEVELOPMENTONLY  // Echo to the console changes caused by toggling.
@@ -916,15 +916,15 @@ If 'match', the server will maintain a 1:N ratio of humans to bots, where N is b
 // csm_sst_max_visible_dist                                  float32  2000                  FCVAR_CLIENTDLL|FCVAR_CHEAT
 // csm_sst_pushback_distance                                 float32  1500                  FCVAR_CLIENTDLL|FCVAR_CHEAT  // default pushback
 // csm_sst_shadow_focus_region_caster_headroom               float32  256                   FCVAR_CLIENTDLL|FCVAR_CHEAT
-// csm_sst_shadow_focus_region_maxz                          float32  2000                  FCVAR_CLIENTDLL|FCVAR_CHEAT
-// csm_sst_shadow_focus_region_minz                          float32  -2000                 FCVAR_CLIENTDLL|FCVAR_CHEAT
+// csm_sst_shadow_focus_region_maxz                          float32  448                   FCVAR_CLIENTDLL|FCVAR_CHEAT
+// csm_sst_shadow_focus_region_minz                          float32  -1495.9999            FCVAR_CLIENTDLL|FCVAR_CHEAT
 // csm_sst_vertical_depth_shear_enable                       bool     true                  FCVAR_CLIENTDLL|FCVAR_CHEAT
 // csm_viewdir_shadow_bias                                   float32  0                     FCVAR_CLIENTDLL|FCVAR_CHEAT
 // csm_viewmodel_max_shadow_dist                             float32  21                    FCVAR_CLIENTDLL|FCVAR_CHEAT
 // csm_viewmodel_max_visible_dist                            float32  1000                  FCVAR_CLIENTDLL|FCVAR_CHEAT
 // csm_viewmodel_nearz                                       float32  0.5                   FCVAR_CLIENTDLL|FCVAR_CHEAT
 // csm_viewmodel_shadows                                     bool     false                 FCVAR_DEVELOPMENTONLY|FCVAR_CLIENTDLL
-// custom_bot_difficulty                                     int32    2                     FCVAR_GAMEDLL|FCVAR_CLIENTDLL|FCVAR_REPLICATED|FCVAR_RELEASE  // Bot difficulty for offline play.
+// custom_bot_difficulty                                     int32    3                     FCVAR_GAMEDLL|FCVAR_CLIENTDLL|FCVAR_REPLICATED|FCVAR_RELEASE  // Bot difficulty for offline play.
 // cv_bot_ai_bt_debug_target                                 int32    -1                    FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_CHEAT  // Draw the behavior tree of the given bot.
 // cv_bot_ai_bt_hiding_spot_show                             bool     false                 FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_CHEAT  // Draw hiding spots.
 // cv_bot_ai_bt_moveto_show_next_hiding_spot                 bool     false                 FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_CHEAT  // Draw the hiding spot the bot will check next.
@@ -1172,7 +1172,7 @@ If 'match', the server will maintain a 1:N ratio of humans to bots, where N is b
 // g_ragdoll_important_maxcount                              int32    2                     FCVAR_DEVELOPMENTONLY|FCVAR_GAMEDLL|FCVAR_CLIENTDLL|FCVAR_REPLICATED
 // g_ragdoll_lvfadespeed                                     int32    100                   FCVAR_DEVELOPMENTONLY|FCVAR_CLIENTDLL
 // g_ragdoll_maxcount                                        int32    5                     FCVAR_DEVELOPMENTONLY|FCVAR_GAMEDLL|FCVAR_CLIENTDLL|FCVAR_REPLICATED
-// game_mode                                                 int32    1                     FCVAR_GAMEDLL|FCVAR_CLIENTDLL|FCVAR_REPLICATED|FCVAR_RELEASE  // The current game mode (based on game type). See GameModes.txt.
+// game_mode                                                 int32    0                     FCVAR_GAMEDLL|FCVAR_CLIENTDLL|FCVAR_REPLICATED|FCVAR_RELEASE  // The current game mode (based on game type). See GameModes.txt.
 // game_online                                               bool     false                 FCVAR_DEVELOPMENTONLY|FCVAR_GAMEDLL|FCVAR_CLIENTDLL|FCVAR_REPLICATED  // The current game is online.
 // game_particle_manager_requeue_messages                    bool     true                  FCVAR_DEVELOPMENTONLY|FCVAR_CLIENTDLL
 // game_public                                               bool     true                  FCVAR_DEVELOPMENTONLY|FCVAR_GAMEDLL|FCVAR_CLIENTDLL|FCVAR_REPLICATED  // The current game is public.
@@ -1211,7 +1211,7 @@ If 'match', the server will maintain a 1:N ratio of humans to bots, where N is b
 // hostage_drop_time                                         float32  1                     FCVAR_DEVELOPMENTONLY|FCVAR_GAMEDLL  // Time for the hostage before it fully drops to ground
 // hostage_is_silent                                         bool     false                 FCVAR_GAMEDLL|FCVAR_CLIENTDLL|FCVAR_REPLICATED|FCVAR_CHEAT  // When set, the hostage won't play any code driven response rules lines
 // hostfile                                                  string   host.txt              FCVAR_GAMEDLL|FCVAR_RELEASE  // The HOST file to load.
-// hostip                                                    int32    0                     FCVAR_RELEASE  // Host game server ip
+// hostip                                                    int32    -1062717439           FCVAR_RELEASE  // Host game server ip
 // hostname                                                  string   TUNG TUNG SAHUR       FCVAR_RELEASE  // Hostname for server.
 // hostname_in_client_status                                 bool     false                 FCVAR_RELEASE  // Show server hostname in client status.
 // hostport                                                  int32    27015                 FCVAR_RELEASE  // Host game server port
@@ -1561,13 +1561,13 @@ If the server is behind NAT, y
 // mp_allowspectators                                        bool     true                  FCVAR_DEVELOPMENTONLY|FCVAR_GAMEDLL|FCVAR_CLIENTDLL|FCVAR_REPLICATED  // toggles whether the server allows spectator mode or not
 // mp_anyone_can_pickup_c4                                   bool     false                 FCVAR_GAMEDLL|FCVAR_CLIENTDLL|FCVAR_REPLICATED|FCVAR_RELEASE  // If set, everyone can pick up the c4, not just Ts.
 // mp_autokick                                               bool     true                  FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE  // Kick idle/team-killing/team-damaging players
-// mp_autoteambalance                                        bool     true                  FCVAR_GAMEDLL|FCVAR_NOTIFY|FCVAR_RELEASE
+// mp_autoteambalance                                        bool     false                 FCVAR_GAMEDLL|FCVAR_NOTIFY|FCVAR_RELEASE
 // mp_backup_restore_load_autopause                          bool     true                  FCVAR_GAMEDLL|FCVAR_RELEASE  // Whether to automatically pause the match after restoring round data from backup
 // mp_backup_round_auto                                      bool     true                  FCVAR_GAMEDLL|FCVAR_RELEASE  // If enabled will keep in-memory backups to handle reconnecting players even if the backup files aren't written to disk
 // mp_backup_round_file                                      string   backup                FCVAR_GAMEDLL|FCVAR_RELEASE  // If set then server will save all played rounds information to files filename_date_time_team1_team2_mapname_roundnum_score1_score2.txt
 // mp_backup_round_file_last                                 string                         FCVAR_GAMEDLL|FCVAR_RELEASE  // Every time a backup file is written the value of this convar gets updated to hold the name of the backup file.
 // mp_backup_round_file_pattern                              string   %prefix%_round%roun…  FCVAR_GAMEDLL|FCVAR_RELEASE  // If set then server will save all played rounds information to files named by this pattern, e.g.'%prefix%_%date%_%time%_%team1%_%team2%_%map%_round%round%_score_%score1%_%score2%.txt'
-// mp_bot_ai_bt                                              string                         FCVAR_GAMEDLL|FCVAR_RELEASE  // Use the specified behavior tree file to drive the bot behavior.
+// mp_bot_ai_bt                                              string   scripts/ai/deathmat…  FCVAR_GAMEDLL|FCVAR_RELEASE  // Use the specified behavior tree file to drive the bot behavior.
 // mp_buy_allow_grenades                                     bool     true                  FCVAR_GAMEDLL|FCVAR_CLIENTDLL|FCVAR_REPLICATED|FCVAR_RELEASE  // Whether players can purchase grenades from the buy menu or not.
 // mp_buy_allow_guns                                         int32    255                   FCVAR_GAMEDLL|FCVAR_CLIENTDLL|FCVAR_REPLICATED|FCVAR_RELEASE  // Whether players can purchase guns: pistols (1), SMGs (2), rifles (4), shotguns (8), sniper rifles (16), heavy MGs (32).
 // mp_buy_anywhere                                           int32    0                     FCVAR_GAMEDLL|FCVAR_CLIENTDLL|FCVAR_NOTIFY|FCVAR_REPLICATED|FCVAR_RELEASE  // When set, players can buy anywhere, not only in buyzones. 0 = default. 1 = both teams. 2 = Terrorists. 3 = Counter-Terrorists.
@@ -1661,7 +1661,7 @@ If the server is behind NAT, y
 // mp_ignore_round_win_conditions                            bool     false                 FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE  // Ignore conditions which would end the current round
 // mp_items_prohibited                                       string                         FCVAR_GAMEDLL|FCVAR_CLIENTDLL|FCVAR_REPLICATED|FCVAR_RELEASE  // Set this convar to a comma-delimited list of definition indices of weapons that should be prohibited from use.
 // mp_join_grace_time                                        float32  0                     FCVAR_GAMEDLL|FCVAR_CLIENTDLL|FCVAR_REPLICATED|FCVAR_RELEASE  // Number of seconds after round start to allow a player to join a game
-// mp_limitteams                                             int32    2                     FCVAR_GAMEDLL|FCVAR_NOTIFY|FCVAR_REPLICATED|FCVAR_RELEASE  // Max # of players 1 team can have over another (0 disables check)
+// mp_limitteams                                             int32    0                     FCVAR_GAMEDLL|FCVAR_NOTIFY|FCVAR_REPLICATED|FCVAR_RELEASE  // Max # of players 1 team can have over another (0 disables check)
 // mp_logdetail                                              int32    0                     FCVAR_GAMEDLL|FCVAR_RELEASE  // Logs attacks.  Values are: 0=off, 1=enemy, 2=teammate, 3=both)
 // mp_logdetail_items                                        bool     false                 FCVAR_GAMEDLL|FCVAR_RELEASE  // Logs a line any time a player acquires or loses an item.
 // mp_logmoney                                               bool     false                 FCVAR_GAMEDLL|FCVAR_RELEASE  // Enables money logging.  Values are: 0=off, 1=on
@@ -1712,7 +1712,7 @@ If the server is behind NAT, y
 // mp_retake_t_loadout_full_buy_round                        string   0|2;#GameUI_Retake_…  FCVAR_GAMEDLL|FCVAR_CLIENTDLL|FCVAR_REPLICATED|FCVAR_RELEASE  // T Loadouts for full buy round when playing bomb site retake.
 // mp_retake_t_loadout_light_buy_round                       string   0|2;#GameUI_Retake_…  FCVAR_GAMEDLL|FCVAR_CLIENTDLL|FCVAR_REPLICATED|FCVAR_RELEASE  // T Loadouts for force buy round when playing bomb site retake.
 // mp_retake_t_loadout_upgraded_pistol_round                 string   0|2;#GameUI_Retake_…  FCVAR_GAMEDLL|FCVAR_CLIENTDLL|FCVAR_REPLICATED|FCVAR_RELEASE  // T Loadouts for upgraded pistol round when playing bomb site retake.
-// mp_round_restart_delay                                    float32  7                     FCVAR_GAMEDLL|FCVAR_CLIENTDLL|FCVAR_REPLICATED|FCVAR_RELEASE  // Number of seconds to delay before restarting a round after a win
+// mp_round_restart_delay                                    float32  10                    FCVAR_GAMEDLL|FCVAR_CLIENTDLL|FCVAR_REPLICATED|FCVAR_RELEASE  // Number of seconds to delay before restarting a round after a win
 // mp_roundtime                                              float32  1.92                  FCVAR_GAMEDLL|FCVAR_NOTIFY|FCVAR_REPLICATED|FCVAR_RELEASE  // How many minutes each round takes.
 // mp_roundtime_defuse                                       float32  1.92                  FCVAR_GAMEDLL|FCVAR_NOTIFY|FCVAR_REPLICATED|FCVAR_RELEASE  // How many minutes each round of Bomb Defuse takes. If 0 then use mp_roundtime instead.
 // mp_roundtime_hostage                                      float32  1.92                  FCVAR_GAMEDLL|FCVAR_NOTIFY|FCVAR_REPLICATED|FCVAR_RELEASE  // How many minutes each round of Hostage Rescue takes. If 0 then use mp_roundtime instead.
@@ -1787,7 +1787,7 @@ If the server is behind NAT, y
 // mp_weapons_allow_pistols                                  int32    -1                    FCVAR_GAMEDLL|FCVAR_CLIENTDLL|FCVAR_REPLICATED|FCVAR_RELEASE  // Determines which team, if any, can purchase Pistols. -1 = any; 0 = non; 2 = Ts; 3 = CTs.
 // mp_weapons_allow_rifles                                   int32    -1                    FCVAR_GAMEDLL|FCVAR_CLIENTDLL|FCVAR_REPLICATED|FCVAR_RELEASE  // Determines which team, if any, can purchase Rifles. -1 = any; 0 = non; 2 = Ts; 3 = CTs.
 // mp_weapons_allow_smgs                                     int32    -1                    FCVAR_GAMEDLL|FCVAR_CLIENTDLL|FCVAR_REPLICATED|FCVAR_RELEASE  // Determines which team, if any, can purchase SMGs. -1 = any; 0 = non; 2 = Ts; 3 = CTs.
-// mp_weapons_allow_typecount                                int32    5                     FCVAR_GAMEDLL|FCVAR_CLIENTDLL|FCVAR_REPLICATED|FCVAR_RELEASE  // Determines how many purchases of each weapon type allowed per player per round (0 to disallow purchasing, -1 to have no limit).
+// mp_weapons_allow_typecount                                int32    2                     FCVAR_GAMEDLL|FCVAR_CLIENTDLL|FCVAR_REPLICATED|FCVAR_RELEASE  // Determines how many purchases of each weapon type allowed per player per round (0 to disallow purchasing, -1 to have no limit).
 // mp_weapons_allow_zeus                                     int32    5                     FCVAR_GAMEDLL|FCVAR_CLIENTDLL|FCVAR_REPLICATED|FCVAR_RELEASE  // Determines how many Zeus purchases a player can make per round (0 to disallow, -1 to have no limit).
 // mp_weapons_max_gun_purchases_per_weapon_per_match         int32    -1                    FCVAR_GAMEDLL|FCVAR_CLIENTDLL|FCVAR_REPLICATED|FCVAR_RELEASE  // Max number of times a player may purchase any weapon per match
 // mp_weaponstay                                             bool     false                 FCVAR_DEVELOPMENTONLY|FCVAR_GAMEDLL|FCVAR_NOTIFY
@@ -2309,7 +2309,7 @@ If the server is behind NAT, y
 // player_nevershow_communityservermessage                   string   1                     FCVAR_CLIENTDLL|FCVAR_ARCHIVE|FCVAR_PER_USER
 // player_ping_token_cooldown                                float32  20                    FCVAR_GAMEDLL|FCVAR_CHEAT|FCVAR_RELEASE  // Cooldown for how long it takes for a player's ping token to refresh allowing them to ping again (they get 5 tokens).
 // player_survival_list_10_0_303                             string   mg_dz_blacksite,mg_…  FCVAR_CLIENTDLL|FCVAR_ARCHIVE
-// player_teamplayedlast                                     int32    3                     FCVAR_CLIENTDLL|FCVAR_ARCHIVE|FCVAR_PER_USER
+// player_teamplayedlast                                     int32    2                     FCVAR_CLIENTDLL|FCVAR_ARCHIVE|FCVAR_PER_USER
 // player_use_radius                                         float32  80                    FCVAR_GAMEDLL|FCVAR_CLIENTDLL|FCVAR_REPLICATED|FCVAR_CHEAT
 // player_wargames_list2_10_0_0                              string                         FCVAR_CLIENTDLL|FCVAR_ARCHIVE
 // population_distribution_debug                             float32  0                     FCVAR_DEVELOPMENTONLY|FCVAR_GAMEDLL|FCVAR_REPLICATED
@@ -3110,7 +3110,7 @@ If the server is behind NAT, y
 // snd_mixahead                                              float32  0.001                 FCVAR_ARCHIVE
 // snd_mixer_master_dsp                                      float32  1                     FCVAR_CHEAT
 // snd_mixer_master_level                                    float32  1                     FCVAR_CHEAT
-// snd_music_mode                                            float32  1                     FCVAR_CLIENTDLL|FCVAR_RELEASE  // Selects which per-game-mode set of music volume convars is live
+// snd_music_mode                                            float32  2                     FCVAR_CLIENTDLL|FCVAR_RELEASE  // Selects which per-game-mode set of music volume convars is live
 // snd_music_settings_mode                                   int32    0                     FCVAR_CLIENTDLL|FCVAR_ARCHIVE|FCVAR_RELEASE  // Which game mode's music volumes the audio settings screen is editing
 // snd_musicvolume                                           float32  1                     FCVAR_ARCHIVE  // Music volume
 // snd_mute_losefocus                                        bool     true                  FCVAR_ARCHIVE
@@ -3217,7 +3217,7 @@ If the server is behind NAT, y
 // snd_sos_tools_detailed_debugging                          bool     true                  FCVAR_DEVELOPMENTONLY|FCVAR_ARCHIVE
 // snd_sound_areas_debug                                     bool     false                 FCVAR_CLIENTDLL|FCVAR_REPLICATED|FCVAR_CHEAT
 // snd_sound_areas_debug_interval                            float32  0.2                   FCVAR_CLIENTDLL|FCVAR_REPLICATED|FCVAR_CHEAT
-// snd_soundmixer                                            string   MainMenu_Mix          FCVAR_DEVELOPMENTONLY
+// snd_soundmixer                                            string   Default_Mix           FCVAR_DEVELOPMENTONLY
 // snd_soundmixer_update_maximum_frame_rate                  int32    10                    FCVAR_CHEAT
 // snd_soundmixer_version                                    int32    2                     FCVAR_DEVELOPMENTONLY
 // snd_spatialize_lerp                                       float32  0                     FCVAR_ARCHIVE|FCVAR_RELEASE
@@ -3407,8 +3407,8 @@ If the server is behind NAT, y
 // stats_highlight_interval                                  float32  10                    FCVAR_DEVELOPMENTONLY|FCVAR_CLIENTDLL  // Interval between hightlight screens in the transition stats panel
 // steam_controller_haptics                                  bool     true                  FCVAR_CLIENTDLL|FCVAR_RELEASE
 // steamaudio_customdata_dimensions_numrays                  int32    32768                 FCVAR_DEVELOPMENTONLY  // Number of rays to trace for estimating inside outside status of a probe.
-// steamworks_sessionid_client                               string   0                     FCVAR_CLIENTDLL|FCVAR_USERINFO  // The client session ID for the new steamworks gamestats.
-// steamworks_sessionid_server                               string   0                     FCVAR_DEVELOPMENTONLY|FCVAR_GAMEDLL|FCVAR_CLIENTDLL|FCVAR_REPLICATED  // The server session ID for the new steamworks gamestats.
+// steamworks_sessionid_client                               string   8950046073697         FCVAR_CLIENTDLL|FCVAR_USERINFO  // The client session ID for the new steamworks gamestats.
+// steamworks_sessionid_server                               string   8950046076426         FCVAR_DEVELOPMENTONLY|FCVAR_GAMEDLL|FCVAR_CLIENTDLL|FCVAR_REPLICATED  // The server session ID for the new steamworks gamestats.
 // sticky_tooltips                                           bool     false                 FCVAR_DEVELOPMENTONLY|FCVAR_CLIENTDLL  // Don't ever hide tooltips. Helpful when debugging complicated tooltip layouts.
 // surf_speed_slow                                           float32  50                    FCVAR_GAMEDLL|FCVAR_CLIENTDLL|FCVAR_REPLICATED|FCVAR_RELEASE  // Speed above which surf sounds are played.
 // suspicious_hit_odds_threshold                             float32  0.01                  FCVAR_GAMEDLL|FCVAR_RELEASE
@@ -3427,7 +3427,7 @@ If the server is behind NAT, y
 // sv_allow_switching_weapon_handedness                      bool     true                  FCVAR_DEVELOPMENTONLY|FCVAR_GAMEDLL|FCVAR_CLIENTDLL|FCVAR_REPLICATED
 // sv_allow_votes                                            bool     true                  FCVAR_GAMEDLL|FCVAR_RELEASE  // Allow voting?
 // sv_alltalk                                                bool     false                 FCVAR_GAMEDLL|FCVAR_NOTIFY|FCVAR_RELEASE  // Players can hear all other players' voice communication, no team restrictions
-// sv_annotation_limits_max_rounds_per_half                  int32    5                     FCVAR_GAMEDLL|FCVAR_CLIENTDLL|FCVAR_REPLICATED|FCVAR_RELEASE  // Hard limit on maximum number of rounds (per half) that annotations can be seen in a live match
+// sv_annotation_limits_max_rounds_per_half                  int32    -1                    FCVAR_GAMEDLL|FCVAR_CLIENTDLL|FCVAR_REPLICATED|FCVAR_RELEASE  // Hard limit on maximum number of rounds (per half) that annotations can be seen in a live match
 // sv_auto_adjust_bot_difficulty                             bool     true                  FCVAR_GAMEDLL|FCVAR_RELEASE  // Adjust the difficulty of bots each round based on contribution score.
 // sv_auto_cstrafe_attempt_window                            int32    1                     FCVAR_GAMEDLL|FCVAR_RELEASE  // The length of the window of trailing counter-strafe attempts considered during input automation detection.
 // sv_auto_cstrafe_kick                                      bool     false                 FCVAR_GAMEDLL|FCVAR_RELEASE  // Whether or not to kick players when counter-strafe input automation is detected.
@@ -3461,7 +3461,7 @@ If the server is behind NAT, y
 // sv_c4_upright_constraint_enabled                          bool     true                  FCVAR_DEVELOPMENTONLY|FCVAR_GAMEDLL  // Use a constraint to keep C4 pointed upright when thrown
 // sv_c4_upright_constraint_strength                         float32  0.6                   FCVAR_DEVELOPMENTONLY|FCVAR_GAMEDLL  // How quickly the constraint converges
 // sv_chat_proximity                                         float32  -1                    FCVAR_GAMEDLL|FCVAR_CLIENTDLL|FCVAR_REPLICATED|FCVAR_RELEASE
-// sv_cheats                                                 bool     false                 FCVAR_NOTIFY|FCVAR_REPLICATED|FCVAR_RELEASE  // Allow cheats on server
+// sv_cheats                                                 bool     true                  FCVAR_NOTIFY|FCVAR_REPLICATED|FCVAR_RELEASE  // Allow cheats on server
 // sv_clanid                                                 uint32   0                     FCVAR_DEVELOPMENTONLY|FCVAR_GAMEDLL  // Steam clan ID to allow members to set some convars
 // sv_clanserver_gms                                         bool     false                 FCVAR_DEVELOPMENTONLY
 // sv_clantags_enabled                                       bool     true                  FCVAR_GAMEDLL|FCVAR_CLIENTDLL|FCVAR_REPLICATED|FCVAR_RELEASE  // Show players' clan tags in their names.
@@ -3852,7 +3852,7 @@ If the server is behind NAT, y
 // sv_vote_kick_ban_duration                                 float32  15                    FCVAR_GAMEDLL|FCVAR_NOTIFY|FCVAR_REPLICATED|FCVAR_RELEASE  // How long should a kick vote ban someone from the server? (in minutes)
 // sv_vote_quorum_ratio                                      float32  0.501                 FCVAR_GAMEDLL|FCVAR_RELEASE  // The minimum ratio of players needed to vote on an issue to resolve it.
 // sv_vote_timer_duration                                    float32  15                    FCVAR_GAMEDLL|FCVAR_RELEASE  // How long to allow voting on an issue
-// sv_vote_to_changelevel_before_match_point                 bool     false                 FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE  // Restricts vote to change level to rounds prior to match point (default 0, vote is never disallowed)
+// sv_vote_to_changelevel_before_match_point                 bool     true                  FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE  // Restricts vote to change level to rounds prior to match point (default 0, vote is never disallowed)
 // sv_vote_to_changelevel_rndmin                             int32    0                     FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE  // When non-zero, restricts vote to change level to this many first rounds or minutes of the match (default 0, vote is not disallowed)
 // sv_walkable_normal                                        float32  0.7                   FCVAR_GAMEDLL|FCVAR_CLIENTDLL|FCVAR_REPLICATED|FCVAR_CHEAT|FCVAR_RELEASE
 // sv_warmup_to_freezetime_delay                             int32    4                     FCVAR_GAMEDLL|FCVAR_CLIENTDLL|FCVAR_REPLICATED|FCVAR_RELEASE  // Delay between end of warmup and start of match.
@@ -3985,7 +3985,7 @@ If the server is behind NAT, y
 // ui_news_last_read_link2                                   string                         FCVAR_CLIENTDLL|FCVAR_ARCHIVE|FCVAR_RELEASE
 // ui_notification_tb_snooze                                 string                         FCVAR_CLIENTDLL|FCVAR_ARCHIVE|FCVAR_RELEASE
 // ui_party_msg_sound_enabled                                bool     true                  FCVAR_CLIENTDLL|FCVAR_RELEASE  // When enabled, lobby messages will play a short sound
-// ui_playsettings_custom_preset                             string   mg_casualalpha        FCVAR_CLIENTDLL|FCVAR_ARCHIVE|FCVAR_RELEASE
+// ui_playsettings_custom_preset                             string                         FCVAR_CLIENTDLL|FCVAR_ARCHIVE|FCVAR_RELEASE
 // ui_playsettings_directchallengekey                        string   SQ9MC-YM9E-SKMPJ-US…  FCVAR_CLIENTDLL|FCVAR_ARCHIVE|FCVAR_RELEASE
 // ui_playsettings_flags_listen_casual                       string   0                     FCVAR_CLIENTDLL|FCVAR_ARCHIVE|FCVAR_RELEASE
 // ui_playsettings_flags_listen_competitive                  string   16                    FCVAR_CLIENTDLL|FCVAR_ARCHIVE|FCVAR_RELEASE

@@ -2312,9 +2312,9 @@
           },
           {
             "index": 36,
-            "module": "lootline_0915c91b03665018.dll",
+            "module": "lootline_8adc359006263946.dll",
             "name": null,
-            "rva": 356656
+            "rva": 362672
           },
           {
             "index": 37,
@@ -20570,9 +20570,9 @@
           },
           {
             "index": 76,
-            "module": "lootline_0915c91b03665018.dll",
+            "module": "lootline_8adc359006263946.dll",
             "name": null,
-            "rva": 362544
+            "rva": 368560
           },
           {
             "index": 77,

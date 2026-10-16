@@ -884,11 +884,11 @@
           {
             "module": "client.dll",
             "name": "OverrideView",
-            "pattern": "40 53 57 48 83 EC 58 48 8B FA E8",
-            "prototype": "void __fastcall OverrideView(__int64 a1, __int64 a2)",
+            "pattern": null,
+            "prototype": null,
             "purpose": "ClientMode::OverrideView(this, CViewSetup*)",
             "role": "hook",
-            "rva": "0xD02E30"
+            "rva": null
           }
         ],
         "globals": [
@@ -2150,6 +2150,11 @@
   ],
   "note": "How each feature is built, internal (in-process) and external (out-of-process). Offsets are resolved from this dump: source schema = schema field, engine = engine struct, schema+manual = schema field plus a fixed delta, manual = not described anywhere else (verified_build says where it was checked; stale = true when that is not this build). Functions carry this build's RVA and pattern.",
   "unresolved": [
+    {
+      "feature": "FOV changer",
+      "kind": "function",
+      "name": "client.dll!OverrideView"
+    },
     {
       "feature": "Skin changer",
       "kind": "function",

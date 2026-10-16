@@ -8,7 +8,7 @@
 namespace CViewSetup {
 
 // passed to OverrideView in rdx
-inline constexpr std::ptrdiff_t kOverrideView_rva = 0xD02E30; // pattern OverrideView
+// kOverrideView_rva: pattern OverrideView did not resolve in this dump
 
 // --- fields ---
 inline constexpr std::ptrdiff_t m_flFov         = 0x498 ; // float - field of view

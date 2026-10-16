@@ -3,7 +3,7 @@
 // module:        panorama.dll
 // classes:       0
 // enums:         2
-// generated_at:  2026-10-15T19:05:24.277265800+00:00
+// generated_at:  2026-10-16T13:04:37.848183400+00:00
 //
 // Use:
 //   auto* pawn = reinterpret_cast<C_CSPlayerPawn*>(addr);

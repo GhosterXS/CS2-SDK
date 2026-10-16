@@ -78,7 +78,6 @@ namespace pattern {
         inline constexpr std::string_view CacheParticleEffect = "4C 8B DC 53 48 81 EC 90 00 00 00 F2 0F 10 05 FD";
         inline constexpr std::string_view CalcLocalPlayerView = "48 89 5C 24 08 48 89 6C 24 10 48 89 74 24 18 48 89 7C 24 20 41 56 48 83 EC 40 49 8B E9 49 8B F8";
         inline constexpr std::string_view CalcSpread = "48 8B C4 48 89 58 18 48 89 68 20 89 50 10 56 57";
-        inline constexpr std::string_view CalcViewmodelView = "40 53 48 83 EC 60 48 8B 41 08 49 8B D8 8B 48 30";
         // also known as: CalcWorldSpaceBones
         inline constexpr std::string_view CalculateWorldSpaceBones = "48 89 4C 24 08 55 53 56 57 41 54 41 55 41 56 41 57 B8 98 42";
         // also known as: SetModel
@@ -198,6 +197,8 @@ namespace pattern {
         inline constexpr std::string_view GetUserCmdManager = "41 56 41 57 48 83 EC 48 48 8D 54 24 68 E8 AE B4";
         inline constexpr std::string_view GetUserCmdSequence = "48 83 EC 28 E8 ? ? ? ? 8B 80 10 59 00 00 48";
         inline constexpr std::string_view GetViewAngles = "4C 8B C1 85 D2 74 08 48 8D 05 ? ? ? ? C3 8B";
+        // also known as: CalcViewmodel
+        inline constexpr std::string_view GetViewModelOffsets = "40 55 53 56 41 56 41 57 48 8B EC 48 83 EC 20 4D";
         inline constexpr std::string_view GetWeaponInAccuracyRecoveryTime = "48 89 5C 24 08 57 48 83 EC 30 48 8B D9 E8 9E 50";
         inline constexpr std::string_view GetWorldGroupHandle = "40 55 48 8B EC 48 83 EC 60 85 D2 75 16 48 8B 0D";
         inline constexpr std::string_view GetWorldGroupId = "48 8B 41 30 48 85 C0 74 0D 48 8B 40 10 8B 48 38";
@@ -246,7 +247,6 @@ namespace pattern {
         inline constexpr std::string_view OnRemoveEntity = "48 89 74 24 10 57 48 83 EC 20 41 B9 FF 7F 00 00 41 8B C0 41 23 C1 48 8B F2 41 83 F8 FF 48 8B F9 44 0F 45 C8 41 81 F9 00 40 00 00 73 08 FF 89 20";
         inline constexpr std::string_view OnSkeletonModelChanged = "49 8B 00 48 89 81 B8 00 00 00 C6 81 B0 00 00 00";
         inline constexpr std::string_view OnVoteResult = "48 89 5C 24 08 48 89 6C 24 10 48 89 74 24 18 57 41 56 41 57 48 81 EC 90";
-        inline constexpr std::string_view OverrideView = "40 53 57 48 83 EC 58 48 8B FA E8 ? ? ? ? 48";
         inline constexpr std::string_view PanoramaEvent = "40 56 57 41 57 48 83 EC 40 48 8B 3D ? ? ? ?";
         inline constexpr std::string_view ParseSubtickDuration = "40 55 48 8D AC 24 70 FD FF FF 48 81 EC 90 03 00";
         inline constexpr std::string_view ParseSubtickFraction = "40 55 48 8D AC 24 40 FE FF FF 48 81 EC C0 02 00 00 F2 0F 10";
